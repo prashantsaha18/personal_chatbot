@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background-color: #212121;
+  color: #ececec;
+  font-family: 'Söhne', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #666; }
+
+/* Blinking cursor for streaming */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.streaming-cursor::after {
+  content: "▋";
+  font-size: 0.85em;
+  animation: blink 0.7s infinite;
+  margin-left: 1px;
+  color: #9b9b9b;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 0.25s ease-out forwards; }
+
+/* Prose styles for markdown */
+.prose-chat p { margin-bottom: 0.75rem; line-height: 1.75; }
+.prose-chat p:last-child { margin-bottom: 0; }
+.prose-chat ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+.prose-chat ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+.prose-chat li { margin-bottom: 0.25rem; line-height: 1.7; }
+.prose-chat h1 { font-size: 1.4rem; font-weight: 700; margin: 1rem 0 0.5rem; }
+.prose-chat h2 { font-size: 1.2rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.prose-chat h3 { font-size: 1rem; font-weight: 600; margin: 0.75rem 0 0.35rem; }
+.prose-chat blockquote { border-left: 3px solid #555; padding-left: 1rem; color: #aaa; margin: 0.5rem 0; }
+.prose-chat table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.875rem; }
+.prose-chat th { background: #2f2f2f; padding: 0.5rem 0.75rem; text-align: left; border: 1px solid #444; font-weight: 600; }
+.prose-chat td { padding: 0.5rem 0.75rem; border: 1px solid #444; }
+.prose-chat tr:nth-child(even) td { background: #2a2a2a; }
+.prose-chat a { color: #7eb8f7; text-decoration: underline; }
+.prose-chat strong { font-weight: 600; color: #fff; }
+.prose-chat hr { border-color: #444; margin: 1rem 0; }
