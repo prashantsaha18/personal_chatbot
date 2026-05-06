@@ -1,4 +1,4 @@
-import { NextAuthOptions } from "next-auth";
+/* import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions: NextAuthOptions = {
@@ -20,3 +20,4 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
+/* this is the auth file */
